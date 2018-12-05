@@ -1,0 +1,8 @@
+.title {
+	text-align: center;
+}
+
+.columns.is-centered {
+	padding: 5px;
+justify-content: center;
+}
