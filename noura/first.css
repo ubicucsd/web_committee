@@ -1,0 +1,17 @@
+body  {
+	font-family: Verdana;
+	color: rgb(105,105,105) ;
+	background-color: rgb(220,220,220);
+}
+h1 {
+	text-align: center;
+}
+.subtitle {
+	text-align: center;
+}
+.dudes {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}

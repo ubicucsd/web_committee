@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<link rel="stylesheet" type="text/css" href=index.css>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Table Demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <section class="hero is-primary">
+	  <div class="hero-body">
+	    <div class="container">
+	      <p class="title">Industry Job Opportunites</p>
+	      <p class="subtitle">Below is a table of open positions and their requirements.</p>
+	    </div>
+	  </div>
+  </section>
+
+	
+	<body>
+    <div class="container">
+    	<table id="t1" class="table is-responsive">
+    	</table>
+    </div>
+
+	</body>
+
+  <script>
+		window.onload = function CreateTableFromJSON() {
+			var jobs = [
+				{
+					"Company" :"GRAIL",
+					"Job Title" : "Software Engineer",
+					"Field" : "CS",
+					"Preferred Skills": "Web Development",
+					"Application Link" : "grail.com/careers"
+				},
+				{
+					"Company" :"GRAIL2",
+					"Job Title" : "Software Engineer2",
+					"Field" : "CS2",
+					"Preferred Skills": "Web Development2",
+					"Application Link" : "grail.com/careers2"
+				}
+			]
+
+			//Get headers 
+			// 'Company', 'Job Title', 'Field', 'Preferred Skill', 'Application Link'
+			var col = [];
+			for(var i = 0; i < jobs.length; i++) {
+				for(var key in jobs[i]) {
+					if (col.indexOf(key) === -1) {
+						col.push(key);
+					}
+				}
+			}
+
+			//create dynamic table
+			//var _table = document.createElement("table");
+			var _table = document.getElementById("t1");
+
+			//create table header row using extracted headers
+			var _tr = _table.insertRow(-1); //Table row
+
+			for(var i = 0; i < col.length; i++) {
+				var _th = document.createElement("th");
+				_th.innerHTML = col[i];
+				_tr.appendChild(_th);
+			}
+			
+			//add rest of json data to table
+      for (var i = 0; i < jobs.length; i++) {
+
+            _tr = _table.insertRow(-1);
+
+            for (var j = 0; j < col.length; j++) {
+                var _tabCell = _tr.insertCell(-1);
+                _tabCell.innerHTML = jobs[i][col[j]];
+            }
+        }      
+		}
+  </script>
+</html>
