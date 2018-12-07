@@ -1,0 +1,28 @@
+.card{
+    max-width : 350px;
+}
+
+/* .image{
+  border-style: dashed;
+  border-radius: 3px;
+  border-color: pink;
+} */
+
+#bioeLogo{
+  /* border-style: dashed;
+  border-radius: 3px;
+  border-color: pink; */
+  height: 30px;
+}
+
+#context{
+  height: 180px;
+}
+
+.title{
+  color: DarkSlateGray;
+}
+
+.subtitle{
+  color: teal;
+}
