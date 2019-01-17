@@ -1,0 +1,13 @@
+.title {
+	text-align: center;
+}
+
+.columns.is-centered {
+	padding: 5px;
+  justify-content: center;
+}
+
+table {
+  width: 500px;
+  margin: 0px auto;
+}
